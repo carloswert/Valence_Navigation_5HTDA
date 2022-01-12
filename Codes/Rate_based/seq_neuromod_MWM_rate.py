@@ -1,14 +1,10 @@
 from optparse import OptionParser
 from numba import jit, cuda
 import numpy as np
-import matplotlib.pyplot as plt
 import numpy.matlib
 import itertools
 import time
-import pandas as pd
-from IPython import display
 from NeuFun_Cuda import convolution, convolution_type2, neuron, weights_update_rate
-import csv
 from bisect import bisect
 import multiprocessing
 import pickle
@@ -95,6 +91,8 @@ def main():
     tau_Sero=options.TSero   #time constant post-pre window for serotonin
 
     if plot_flag:
+        import matplotlib.pyplot as plt
+        from IPython import display
         plt.close()
     if episodes==1:
 
