@@ -9,11 +9,30 @@ The repository contains:
 2. Code for statistical analysis: Jupyter notebook
 3. Files with the datasets used in the article: 
 
+## Setup
+Simulations require Python 3.7.9 and:
+
+- Numba 0.50.1
+- Numpy 1.18.5
+- Matplotlib 3.2.2
+- Scipy 1.4.1
+
+Other requirements can be found in the requirements.txt file
+
+
 ## Run simulations
 
+Codes for SWC are named as seq_neuromod and those for CWC are comp_neuromod. Simulations with more than one trial (-t) are runned in parallel, which can be optimised by changing the Pool() option of Python's multiprocessing library.
 
-## Setup
+For execution:
+```
 
+python seq_neuromod_MWM.py -o <name_job> -e <episodes> -t <trials> -s
 
+```
 
-### Start app
+We also provide a PBS-compatible code for HPC systems that is able to schedule jobs according to the resources available.
+
+## Data Analysis
+
+The main figures can be recreated with the notebook file Data_Analysis.ipynb and the files contained in the Data_Analysis folder.
